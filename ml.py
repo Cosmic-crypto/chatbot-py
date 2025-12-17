@@ -27,7 +27,7 @@ for intent in intents:
 vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(patterns)
 
-X_train, X_test, y_train, y_test = train_test_split(X, tags, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, tags, stratify=tags, test_size=0.2, random_state=42)
 
 # Define our model
 model = LinearSVC()
@@ -42,7 +42,7 @@ def AI_response(user_input: str) -> str:
         numbers = findall(r"\d+", user_input)
         
         # Check we have exactly 2 numbers
-        if len(numbers) < 2 or len(numbers) > 2:
+        if len(numbers) != 2:
             return "I need/can only take two numbers to perform the operation."
         
         x, y = float(numbers[0]), float(numbers[1])

@@ -102,8 +102,6 @@ To exit:
 - Type `bye`, `quit`, `exit`, etc.
 - Or press **Ctrl + C**
 
-The terminal will automatically clear when the chat ends.
-
 ---
 
 ## 🧮 Math Examples

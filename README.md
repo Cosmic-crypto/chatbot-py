@@ -176,7 +176,11 @@ This project is open-source and free to use for learning and experimentation.
 
 ## 👤 Author
 
-Created by **Abhi** 🚀
+Created by **Cosmic Beast** 🚀
 
 Built with Python, curiosity, and machine learning.
 
+---
+## Feedback
+I would love to have some feedback because this is lime my first major project building a chatbot with ML and it's isn't really the best but it's like an alright beginner
+version.

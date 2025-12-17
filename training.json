@@ -1,162 +1,222 @@
 [
   {
     "tag": "greeting",
-    "patterns": ["hello", "hi", "hey", "good morning", "good afternoon", "good evening", "yo", "what's up", "sup", "hola", "bonjour", "guten tag", "namaste", "salam", "ciao"],
-    "responses": ["Hello!", "Hi there!", "Hey! How can I help you?", "Good to see you!", "Greetings!", "Welcome!"]
+    "patterns": [
+      "hello",
+      "hi",
+      "hey",
+      "hey there",
+      "hello there",
+      "good morning",
+      "good afternoon",
+      "good evening",
+      "yo",
+      "howdy"
+    ],
+    "responses": [
+      "Hello!",
+      "Hi there!",
+      "Hey! How can I help you?",
+      "Good to see you!"
+    ]
   },
+
   {
     "tag": "goodbye",
-    "patterns": ["bye", "goodbye", "see you", "later", "take care", "farewell", "adios", "au revoir", "auf wiedersehen", "bye bye", "catch you later", "peace out", "so long", "ttyl", "cya"],
-    "responses": ["Goodbye!", "See you later!", "Take care!", "Farewell!", "Bye for now!", "Have a great day!"]
+    "patterns": [
+      "bye",
+      "goodbye",
+      "see you later",
+      "talk to you later",
+      "catch you later",
+      "farewell",
+      "exit",
+      "quit",
+      "stop"
+    ],
+    "responses": [
+      "Goodbye!",
+      "See you later!",
+      "Take care!"
+    ]
   },
+
   {
     "tag": "thanks",
-    "patterns": ["thanks", "thank you", "thx", "appreciate it", "thanks a lot", "thank you very much", "cheers", "ta", "much obliged", "gracias", "merci", "danke", "arigato", "shukriya", "dhanyavaad"],
-    "responses": ["You're welcome!", "Anytime!", "No problem!", "Glad to help!", "My pleasure!", "Happy to assist!"]
+    "patterns": [
+      "thanks",
+      "thank you",
+      "thanks a lot",
+      "appreciate it",
+      "much appreciated",
+      "thx"
+    ],
+    "responses": [
+      "You're welcome!",
+      "Glad I could help!",
+      "Anytime!"
+    ]
   },
+
   {
     "tag": "how_are_you",
-    "patterns": ["how are you", "how's it going", "how you doing", "what's new", "how have you been", "are you well", "how's life", "sup", "what's up", "howdy", "you good", "all good", "how's everything", "how goes it", "what's happening"],
-    "responses": ["I'm doing great, thanks!", "All good here!", "I'm fine, how about you?", "Doing well!", "Excellent, thank you!", "Couldn't be better!"]
+    "patterns": [
+      "how are you",
+      "how is it going",
+      "how are you doing",
+      "how have you been",
+      "are you doing well"
+    ],
+    "responses": [
+      "I'm doing great, thanks!",
+      "All good here!",
+      "Doing well — how about you?"
+    ]
   },
-  {
-    "tag": "age",
-    "patterns": ["how old are you", "what's your age", "your age", "are you old", "when were you born", "your birthdate", "how many years old", "age please", "tell me your age", "you seem young", "are you a kid", "are you adult", "age?", "what age", "how aged are you"],
-    "responses": ["I'm an AI, so I don't have an age!", "Age is just a number for bots like me.", "I was created recently, but I'm timeless.", "I don't age, I'm digital!", "No age, just code."]
-  },
+
   {
     "tag": "name",
-    "patterns": ["what's your name", "who are you", "your name", "tell me your name", "name please", "what should I call you", "are you a bot", "introduce yourself", "your identity", "name?", "who r u", "whats ur name", "u are", "bot name", "your moniker"],
-    "responses": ["I'm ChatBot!", "Call me AI Assistant.", "My name is Botty.", "I'm your friendly chatbot.", "You can call me py-bot."]
+    "patterns": [
+      "what is your name",
+      "who are you",
+      "tell me your name",
+      "what should I call you",
+      "are you a bot"
+    ],
+    "responses": [
+      "I'm your friendly chatbot!",
+      "You can call me PyBot.",
+      "I'm an AI assistant."
+    ]
   },
+
   {
     "tag": "creator",
-    "patterns": ["who created you", "your creator", "who made you", "who built you", "your developer", "made by", "created by", "who is your maker", "your inventor", "who programmed you", "builder?", "creator name", "who designed you", "origin", "birth"],
-    "responses": ["I was created by one great dev called Abhi.", "Built by talented developers.", "My creators are AI enthusiasts.", "Made with love by coders.", "I'm a product of Python magic."]
+    "patterns": [
+      "who created you",
+      "who made you",
+      "who built you",
+      "who is your creator",
+      "who programmed you"
+    ],
+    "responses": [
+      "I was created by Abhi.",
+      "Built using Python and machine learning.",
+      "Made by a developer who loves coding."
+    ]
   },
-  {
-    "tag": "weather",
-    "patterns": ["what's the weather", "weather today", "is it raining", "temperature outside", "weather forecast", "how's the weather", "sunny today", "cold outside", "hot today", "weather in city", "rainy?", "snowing", "windy", "humidity", "weather report"],
-    "responses": ["The weather is sunny!", "It's raining cats and dogs.", "Check your local forecast.", "Looks like a nice day.", "Bundle up, it's cold."]
-  },
+
   {
     "tag": "time",
-    "patterns": ["what time is it", "current time", "time now", "tell me the time", "what's the time", "time?", "clock", "hour", "minute", "now time", "time please", "what hour", "time in zone", "utc time", "local time"],
-    "responses": ["It's 12:00 PM.", "Time to check your watch!", "Current time is now.", "It's morning.", "Evening time."]
+    "patterns": [
+      "what time is it",
+      "tell me the time",
+      "current time",
+      "time now"
+    ],
+    "responses": [
+      "I can tell you the current time.",
+      "Let me check the time for you."
+    ]
   },
+
   {
     "tag": "date",
-    "patterns": ["what's the date", "today's date", "current date", "date today", "what day is it", "date?", "calendar", "month", "year", "day of week", "date please", "what month", "year now", "todays day", "date now"],
-    "responses": ["Today is December 16, 2025.", "It's Monday.", "Check the calendar.", "Mid-month.", "End of year."]
+    "patterns": [
+      "what is the date",
+      "today's date",
+      "what day is it",
+      "current date"
+    ],
+    "responses": [
+      "Here is today's date.",
+      "Let me check the date."
+    ]
   },
-  {
-    "tag": "joke",
-    "patterns": ["tell me a joke", "joke please", "make me laugh", "funny joke", "joke time", "humor", "pun", "dad joke", "knock knock", "joke?", "laugh", "amuse me", "something funny", "hilarious", "comedy"],
-    "responses": ["Why did the scarecrow win an award? Because he was outstanding in his field!", "What do you call fake spaghetti? An impasta!", "Why don't skeletons fight each other? They don't have the guts.", "I told my wife she was drawing her eyebrows too high. She looked surprised.", "Why can't you hear a pterodactyl go to the bathroom? Because the pee is silent."]
-  },
-  {
-    "tag": "fact",
-    "patterns": ["tell me a fact", "interesting fact", "random fact", "fact please", "did you know", "fun fact", "factoid", "trivia", "knowledge", "fact?", "share fact", "cool fact", "history fact", "science fact", "animal fact"],
-    "responses": ["Did you know honey never spoils?", "Octopuses have three hearts.", "A group of flamingos is called a flamboyance.", "Bananas are berries, but strawberries aren't.", "The Eiffel Tower can be 15 cm taller during the summer."]
-  },
-  {
-    "tag": "help",
-    "patterns": ["help me", "I need help", "can you help", "assist me", "support", "how to use", "guide", "instructions", "help?", "what can you do", "capabilities", "features", "commands", "menu", "options"],
-    "responses": ["Sure, how can I assist?", "What do you need help with?", "I'm here to help!", "Ask me anything.", "Let me know your question."]
-  },
-  {
-    "tag": "math",
-    "patterns": ["calculate", "what is 2+2", "math problem", "solve equation", "divide", "add", "can you tell me what 10+2"],
-    "responses": ["2+2 is 4.", "Let me calculate that.", "Math mode activated.", "What's the equation?", "I can do math!"]
-  },
-  {
-    "tag": "random",
-    "patterns": ["give me a number 1 to 10", "what's a random number from 1 to 45", "can you tell me a number from 9 to 19"],
-    "responses": ["Sure", "Here's a random number:", "here you are!"]
-  },
-  {
-    "tag": "date",
-    "patterns": ["what's the date to day", "what year is it", "what day is it", "what month is it"],
-    "responses": ["the date is", "the year is", "here is the date and time"]
-  },
+
   {
     "tag": "calendar",
-    "patterns": ["show me the calendar", "what's the day today", "what month is it", "Show me the calendar of the year 2024", "Sow me the calendar of 2020"],
-    "responses": ["Calendar: "]
+    "patterns": [
+      "show me the calendar",
+      "display calendar",
+      "calendar for this month",
+      "calendar for the year"
+    ],
+    "responses": [
+      "Here is the calendar."
+    ]
   },
+
   {
-    "tag": "translation",
-    "patterns": ["translate this", "what does this mean in english", "translate to spanish", "language translation", "interpret", "convert language", "translate?", "french for hello", "spanish hello", "german bye", "translate text", "language", "lingo", "babel", "polyglot"],
-    "responses": ["Hello in Spanish is Hola.", "Translation coming up.", "What language?", "I can translate.", "Sure, provide the text."]
+    "tag": "math",
+    "patterns": [
+      "calculate this",
+      "solve this math problem",
+      "add two numbers",
+      "subtract numbers",
+      "multiply numbers",
+      "divide numbers",
+      "do some math"
+    ],
+    "responses": [
+      "Let me calculate that.",
+      "Math mode activated."
+    ]
   },
+
   {
-    "tag": "news",
-    "patterns": ["latest news", "what's in the news", "current events", "news update", "headlines", "breaking news", "news?", "world news", "local news", "sports news", "tech news", "entertainment news", "politics", "economy", "weather news"],
-    "responses": ["Top headline: AI advances.", "Check reliable sources.", "News flash!", "Today's news.", "Stay informed."]
+    "tag": "random",
+    "patterns": [
+      "give me a random number",
+      "pick a random number",
+      "random number between two values"
+    ],
+    "responses": [
+      "Here is a random number for you."
+    ]
   },
+
   {
-    "tag": "sports",
-    "patterns": ["sports scores", "game results", "who won the match", "sports news", "football score", "basketball", "tennis", "cricket", "sports?", "olympics", "world cup", "super bowl", "champions", "athletes", "teams"],
-    "responses": ["Team A won!", "Score is 2-1.", "Sports update.", "Favorite team?", "Game on!"]
+    "tag": "joke",
+    "patterns": [
+      "tell me a joke",
+      "make me laugh",
+      "say something funny",
+      "joke please"
+    ],
+    "responses": [
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "Why don't skeletons fight each other? They don't have the guts!"
+    ]
   },
+
   {
-    "tag": "movie",
-    "patterns": ["recommend a movie", "good movies", "what to watch", "movie suggestions", "film", "cinema", "hollywood", "bollywood", "movie?", "oscar winners", "top movies", "genre", "action movie", "comedy film", "drama"],
-    "responses": ["Watch Inception!", "Classic: The Godfather.", "New release: Dune.", "Movie night?", "Popcorn ready."]
+    "tag": "help",
+    "patterns": [
+      "help me",
+      "what can you do",
+      "how do you work",
+      "show commands",
+      "what are your features"
+    ],
+    "responses": [
+      "I can chat, do math, show dates, and more.",
+      "Ask me a question and I'll try to help!"
+    ]
   },
+
   {
-    "tag": "book",
-    "patterns": ["recommend a book", "good books", "what to read", "book suggestions", "literature", "novel", "author", "book?", "bestseller", "classics", "genre", "fantasy book", "sci-fi", "mystery", "biography"],
-    "responses": ["Read Harry Potter.", "Classic: 1984.", "New: Atomic Habits.", "Book club?", "Turn the page."]
-  },
-  {
-    "tag": "music",
-    "patterns": ["recommend music", "good songs", "what to listen", "music suggestions", "tunes", "songs", "artist", "music?", "playlist", "genres", "rock", "pop", "jazz", "classical", "hip hop"],
-    "responses": ["Listen to Bohemian Rhapsody.", "Artist: Taylor Swift.", "New album out.", "Music vibes?", "Beat drops."]
-  },
-  {
-    "tag": "food",
-    "patterns": ["recommend food", "what to eat", "recipe", "cooking", "cuisine", "dish", "food?", "hungry", "meal", "breakfast", "lunch", "dinner", "snack", "dessert", "healthy food"],
-    "responses": ["Try pizza!", "Recipe: Pasta.", "Eat healthy.", "Foodie?", "Bon appetit."]
-  },
-  {
-    "tag": "health",
-    "patterns": ["health tips", "stay healthy", "wellness", "fitness", "exercise", "diet", "health?", "doctor", "symptoms", "medicine", "nutrition", "mental health", "yoga", "running", "gym"],
-    "responses": ["Exercise daily.", "Eat veggies.", "Stay hydrated.", "Health first.", "Well being."]
-  },
-  {
-    "tag": "travel",
-    "patterns": ["travel recommendations", "where to go", "vacation", "trip", "destination", "travel?", "flight", "hotel", "tourist", "adventure", "beach", "mountains", "city", "country", "explore"],
-    "responses": ["Visit Paris.", "Travel to Japan.", "Road trip?", "Adventure awaits.", "Pack your bags."]
-  },
-  {
-    "tag": "shopping",
-    "patterns": ["shopping tips", "where to buy", "products", "deals", "sales", "shopping?", "online shopping", "store", "brand", "buy", "purchase", "cart", "checkout", "discount", "coupon"],
-    "responses": ["Check Amazon.", "Sale on now.", "Buy local.", "Shop smart.", "Add to cart."]
-  },
-  {
-    "tag": "complaint",
-    "patterns": ["I have a complaint", "not happy", "issue", "problem", "complain", "feedback negative", "bad service", "error", "bug", "complaint?", "dissatisfied", "upset", "angry", "frustrated", "report"],
-    "responses": ["Sorry to hear that.", "How can I fix it?", "Let me help.", "Apologies.", "We'll improve."]
-  },
-  {
-    "tag": "feedback",
-    "patterns": ["give feedback", "your thoughts", "review", "opinion", "suggest", "feedback?", "rate", "comment", "improve", "suggestion", "positive feedback", "negative", "stars", "like", "dislike"],
-    "responses": ["Thanks for feedback!", "Appreciate it.", "Noted.", "We'll consider.", "Great input."]
-  },
-  {
-    "tag": "fun",
-    "patterns": ["let's have fun", "entertain me", "bored", "fun activity", "game", "fun?", "play", "riddle", "puzzle", "quiz", "story", "adventure", "joke again", "dance", "sing"],
-    "responses": ["Let's play a game!", "Riddle time.", "Fun mode on.", "Entertainer here.", "Laugh out loud."]
-  },
-  {
-    "tag": "capabilities",
-    "patterns": ["what can you do", "your skills", "abilities", "features", "what do you know", "capabilities?", "functions", "commands list", "help menu", "services", "tasks", "handle", "perform", "assist with", "support"],
-    "responses": ["I can chat, tell jokes, etc.", "Many things!", "Ask and see.", "Versatile bot.", "Here to serve."]
-  },
-  {
-    "tag": "rest",
-    "patterns": ["bsoWS6fB", "gpNLV", "oM1a1Uwk*wgg3N1WJ@", "ftP6xmeRZ#45zD3kx", "UTePJqEr9TovY", "pcurn&", "oG6QjjXJXCMx#jG", "4kkSNz", "I@4aVSJrQhCD&5rHl85", "3Hnyk&88NGhx#1", "d5&fGeYYiFKr", "*9XTVASy7DqebKMaUd", "74epSoi", "qFAgRxB5dRQeW0hmJjmE", "D4Kd#3*", "kGoAdz#rZEB*", "kt*MJXdMH4k*fmNSph6q", "OBMI9n", "pAStuXeE##eor96", "yk3UO#Ra1tR9", "r6WksnwT4", "q7dP2cwi@kDULh&TjcyK", "iu7047nqgZ6AOk95@1", "bWv9051rZh54o1Eu0p", "RAseZ", "QA@J9h@l*rhCWuOH", "7mcCI1T&WnC&8PRi7", "SvUKmRzXlLA3un", "EDoF70lfIPw2XSo", "jd@OYE6LVzA", "RaXYhCl*I", "K8iiEJ", "&6OVH2K7XFrqQYI", "sfsrvJjpTUeA", "BnB7MT4YzaxX4&BXKNo", "sGzS0V38@J7N", "fC5lr", "nvYzX2qfbJ#xQZR", "&nbki", "LoUYlOXh", "*hbuS*AVfT", "gY4Nh@ZwCyHw", "2g*P2UCW*r1JFCWr42", "sDXLSwG", "mn0w6Usa&fVGYTQ", "DbtAqRyKw#KxDupVuX&T", "oFV@Isgmpla", "s@KUi5G5L", "Fw*q4heGMTk1&fqKBNOZ", "DD4#uOOW&nnRkleaD"],
-    "responses": ["I don't understand.", "Please rephrase.", "That's gibberish!", "Try again.", "Not clear."]
+    "tag": "fallback",
+    "patterns": [
+      "asdasdasd",
+      "qwertyuiop",
+      "random text",
+      "nonsense input"
+    ],
+    "responses": [
+      "I'm not sure I understand that.",
+      "Could you rephrase your question?",
+      "That didn't quite make sense."
+    ]
   }
 ]

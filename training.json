@@ -156,7 +156,12 @@
       "subtract numbers",
       "multiply numbers",
       "divide numbers",
-      "do some math"
+      "do some math",
+      "what is *",
+      "what is x",
+      "what is /",
+      "what is -",
+      "what is +"
     ],
     "responses": [
       "Let me calculate that.",

@@ -1,5 +1,5 @@
-import tools
-from re import findall
+from tools import *
+from re import findall, search
 from json import load
 from sklearn.svm import LinearSVC
 from sklearn.model_selection import train_test_split
@@ -27,6 +27,7 @@ for intent in intents:
 vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(patterns)
 
+# train our model
 X_train, X_test, y_train, y_test = train_test_split(X, tags, stratify=tags, test_size=0.2, random_state=42)
 
 # Define our model
@@ -49,10 +50,10 @@ def AI_response(user_input: str) -> str:
         
         # Map operation keywords to math function operations
         keywords = {
-            "divide": "divide", "over": "divide", "by": "divide", "divided": "divide", "divided by": "divide",
-            "times": "multiply", "multiply": "multiply", "multiplication": "multiply",
-            "add": "add", "addition": "add", "plus": "add",
-            "sub": "subtract", "take away": "subtract", "subtract": "subtract",
+            "divide": "divide", "over": "divide", "by": "divide", "divided": "divide", "divided by": "divide", "/": "divide",
+            "times": "multiply", "multiply": "multiply", "multiplication": "multiply", "x": "multiply", "*": "multiply",
+            "add": "add", "addition": "add", "plus": "add", "+": "add",
+            "sub": "subtract", "take away": "subtract", "subtract": "subtract", "-": "subtract",
             "subtraction": "subtract", "minus": "subtract"
         }
         
@@ -67,22 +68,24 @@ def AI_response(user_input: str) -> str:
         
         # Call the math function
         try:
-            return f"The answer to that question is: {str(tools.maths(x, y, operation))}"
+            return f"The answer to that question is: {str(maths(x, y, operation))}"
         except Exception as err:
             return f"Error performing calculation: {err}"
         
     elif tag == "random":
         numbers = findall(r"\d+", user_input)
-        return f"Here is a random number from {numbers[0]} to {numbers[1]}: {tools.generate_rand(numbers[0], numbers[1])}"
+        return f"Here is a random number from {numbers[0]} to {numbers[1]}: {generate_rand(numbers[0], numbers[1])}"
     
-    elif tag == "date":
-        return f"Here is the date & time: {tools.fetch_date()}"
+    elif tag in ("date", "time"):
+        return f"Here is the date & time: {fetch_date()}"
     
     elif tag == "calendar":
         numbers = findall(r"\d+", user_input)
         if len(numbers) == 0:
             numbers = None
-        return f"Calendar: {tools.show_calender(numbers)}"
+        else:
+            numbers = int("".join(n for n in numbers))
+        return f"Calendar: {show_calender(numbers)}"
         
     # Handle normal intents
     else:
@@ -100,17 +103,21 @@ while True:
             print("AI: Please enter a valid input")
             continue
 
+        if search(r'[^a-zA-Z0-9\*$$$$\?\.\,\ ]', user):
+            print(f"AI: Your input: {user} contains non-standard characters")
+            continue
+
         if user.strip().lower() in ("break", "stop", "quit", "end", "exit", "goodbye", "bye"):
             user_choice = input("AI: are you sure you want to end this conversation?\n (y/n): ").strip().lower()
 
             if user_choice == "y":
-                print(AI_response("Goodbye"))
+                print(AI_response("goodbye"))
                 break
             
         print(AI_response(user))
     
     except KeyboardInterrupt:
-        print(AI_response("Goodbye"))
+        print(AI_response("goodbye"))
         break
 
     except Exception as err:

@@ -45,6 +45,8 @@ py_chatbot/
 - 🧮 Math operations (add, subtract, multiply, divide)
 - 🎲 Random number generation
 - 📅 Date & time lookup
+- 📰 News headline shower
+- 🌤️ Check the weather (currently only for London)
 - 🗓 Calendar display (current year or specific year)
 - 😂 Jokes & casual conversation
 - 🛑 Graceful exit with terminal clear
@@ -84,7 +86,7 @@ You can easily add more by editing `training.json`.
 ```bash
 pip install scikit-learn
 ```
-and also
+and also for the GUI:
 ```bash
 pip install customtkinter
 ```
@@ -119,6 +121,8 @@ To exit:
 You: add 5 and 10
 You: divide 20 by 4
 You: multiply 6 times 7
+You: what is 20x5
+You: what is 4/2
 ```
 
 ---
@@ -171,7 +175,14 @@ For best results:
 
 - This is a **rule + ML hybrid**, not a generative AI
 - Accuracy depends heavily on training data quality
-- Weather, news, and translations are placeholders unless connected to APIs
+
+---
+
+## Improvement ideas:
+
+- Currently the equation solver does not really work, so fix the equation solver
+- Add a choice to chose where you are and get the weather
+- Add better training data!
 
 ---
 

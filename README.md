@@ -1,4 +1,4 @@
-# PyBot Chatbot (v3.2) 🤖
+# PyBot Chatbot (v3.3) 🤖
 
 A simple **intent-based chatbot** built with **Python**, **scikit-learn**, and **TF-IDF**. PyBot uses classic machine learning (not deep learning) to classify user input into intents and respond accordingly. It also supports basic tools like math operations, random number generation, date/time, and calendar display.
 
@@ -9,6 +9,10 @@ A simple **intent-based chatbot** built with **Python**, **scikit-learn**, and *
 - better accuracy, the model now will not answer unless it is atleast 50% clear on what you are asking
 - equation solver fix (v3.1 bug fix)
 - training data upgrade (v3.2 update)
+- A new layer of verification (v3.3 update)
+- maths func in `tools.py` made safer and cleaner (v3.3 update)
+- standard characters verification in `ml_TUI.py` (v3.3 bug fix)
+- better code readability and code now more compatible with Linux/Mac (v3.3 bug fix)
 
 ---
 

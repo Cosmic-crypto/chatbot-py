@@ -9,8 +9,9 @@ A simple **intent-based chatbot** built with **Python**, **scikit-learn**, and *
 ```
 py_chatbot/
 │
-├── ml.py              # Main chatbot + ML model
-├── tools.py           # Utility functions (math, date, calendar, random)
+├── ml_TUI.py          # Main chatbot + ML model (Terminal)
+├── ml_GUI.py          # Main chatbot + ML model (User-interface)
+├── tools.py           # Utility functions (math, date, calendar, random, search, weather)
 ├── training.json      # Intent definitions (patterns & responses)
 └── README.md          # Project documentation
 ```
@@ -61,7 +62,11 @@ py_chatbot/
 - time
 - date
 - calendar
+- news
+- weather
 - math
+- equation
+- simplify
 - random
 - joke
 - help
@@ -78,6 +83,10 @@ You can easily add more by editing `training.json`.
 
 ```bash
 pip install scikit-learn
+```
+and also
+```bash
+pip install customtkinter
 ```
 
 (Standard libraries like `json`, `datetime`, `random`, etc. are included with Python.)

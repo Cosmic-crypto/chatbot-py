@@ -36,8 +36,8 @@ for intent in intents:
         patterns.append(pattern)
         tags.append(intent['tag'])
 
-vectorizer = load('py_chatbot\\vectorizer.pkl')
-model = load('py_chatbot\\model.pkl')
+vectorizer = load('py_chatbot/vectorizer.pkl')
+model = load('py_chatbot/model.pkl')
 
 def AI_response(user_input: str) -> str:
     if not user_input:
@@ -53,6 +53,11 @@ def AI_response(user_input: str) -> str:
     proba = model.predict_proba(input_vec)[0]
     confidence = max(proba)
     tag = model.classes_[proba.argmax()]
+    first_tag = tag
+    second_tag = model.predict(input_vec)[0]
+
+    if first_tag != second_tag:
+        return "I'm unsure what you mean. Can you clarify?"
 
     CONFIDENCE_THRESHOLDS = {
         "greeting": 0.17,

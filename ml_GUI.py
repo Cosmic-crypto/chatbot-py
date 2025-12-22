@@ -5,10 +5,8 @@ from string import (
     digits,
     punctuation
 )
-from json import load
-from sklearn.svm import LinearSVC
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
+from json import load as jload
+from joblib import load
 from random import choice
 from tools import *
 
@@ -24,7 +22,7 @@ OUTPUT_FRAME.pack(pady=10, fill="both", expand=True)
 
 # Load data from JSON into intents
 with open('py_chatbot\\training.json', 'r', encoding='utf-8') as f:
-    intents = load(f)
+    intents = jload(f)
 
 # Normalize patterns to lowercase for consistency
 for intent in intents:
@@ -38,13 +36,8 @@ for intent in intents:
         patterns.append(pattern)
         tags.append(intent['tag'])
 
-vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform(patterns)
-
-X_train, X_test, y_train, y_test = train_test_split(X, tags, stratify=tags, test_size=0.2, random_state=42)
-
-model = LinearSVC()
-model.fit(X_train, y_train)
+vectorizer = load('vectorizer.pkl')
+model = load('model.pkl')
 
 def AI_response(user_input: str) -> str:
     if not user_input:
@@ -57,7 +50,12 @@ def AI_response(user_input: str) -> str:
             return f"Your input: {user_input} contains non-standard characters"
     
     input_vec = vectorizer.transform([user_input])
-    tag = model.predict(input_vec)[0]
+    proba = model.predict_proba(input_vec)[0]
+    confidence = max(proba)
+    tag = model.classes_[proba.argmax()]
+
+    if confidence < 0.5:
+        return "I am not sure I understand that"
 
     if tag == "math":
         numbers = findall(r"\d+", user_input)
@@ -117,10 +115,7 @@ def AI_response(user_input: str) -> str:
         eq = [w for w in words if w.lower() not in ignored_words]
         vars = findall(r"\D", str(eq))
         
-        found = []
-        for idx, term in enumerate(eq):
-            if search(r"\D", term) or term not in found:
-                del eq[idx]
+        eq = [t for t in eq if t.isalnum() or any(op in t for op in "+-*/^=")]
 
         eq = "".join(str(e) for e in eq)
 

@@ -104,13 +104,18 @@ def get_news(url: str = "https://edition.cnn.com/") -> str:
 
     soup = BeautifulSoup(response.text, "html.parser")
 
-    data = soup.find_all("span")
+    span_data = soup.find_all("span", attrs={"class": "container__headline-text"})
+    h_data = soup.find_all(["h1", "h2", "h3"])
+
+    data = h_data + span_data
+
     news_to_return = ""
 
     for news in data:
         text = news.get_text("\n", True)
 
         if text:
-            news_to_return.join(text)
+            news_to_return += text
+            news_to_return += "\n"
 
     return news_to_return

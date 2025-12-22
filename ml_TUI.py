@@ -27,14 +27,19 @@ for intent in intents:
         tags.append(intent['tag'])
 
 # Convert text → numbers
-vectorizer = load('model.pkl')
-model = load('model.pkl')
+vectorizer = load('py_chatbot/model.pkl')
+model = load('py_chatbot/model.pkl')
 
 def AI_response(user_input: str) -> str:
     input_vec = vectorizer.transform([user_input])
     proba = model.predict_proba(input_vec)[0]
     confidence = max(proba)
     tag = model.classes_[proba.argmax()]
+    first_tag = tag
+    second_tag = model.predict(input_vec)[0]
+
+    if first_tag != second_tag:
+        return "I'm unsure what you mean. Can you clarify?"
 
     CONFIDENCE_THRESHOLDS = {
         "greeting": 0.17,
@@ -173,9 +178,10 @@ while True:
             print("AI: Please enter a valid input")
             continue
 
-        if user not in chars:
-            print(f"AI: Your input: {user} contains non-standard characters")
-            continue
+        for s in user:
+            if s not in chars:
+                print("AI: Invalid character detected")
+                continue
 
         if user.strip().lower() in ("break", "stop", "quit", "end", "exit", "goodbye", "bye"):
             user_choice = input("AI: are you sure you want to end this conversation?\n (y/n): ").strip().lower()

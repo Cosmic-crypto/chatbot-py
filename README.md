@@ -1,13 +1,12 @@
-# PyBot Chatbot (v2) 🤖
+# PyBot Chatbot (v3) 🤖
 
 A simple **intent-based chatbot** built with **Python**, **scikit-learn**, and **TF-IDF**. PyBot uses classic machine learning (not deep learning) to classify user input into intents and respond accordingly. It also supports basic tools like math operations, random number generation, date/time, and calendar display.
 
 ---
-## Release notes (v2)
-- Weather api connection (currently only weather data for London)
-- News (Shown by webscraping)
-- Repeating feature
-- equation solver & simplifier (solver doesn't work yet coming v2.1)
+## Release notes (v3)
+- train.py meaning only train once and no more training
+- better accuracy, the model now will not answer unless it is atleast 50% clear on what you are asking
+- equation solver made better but full fix coming with v3.1
 
 ---
 
@@ -18,6 +17,9 @@ py_chatbot/
 │
 ├── ml_TUI.py          # Main chatbot + ML model (Terminal)
 ├── ml_GUI.py          # Main chatbot + ML model (User-interface)
+├── train.py           # trains the chatbots and creates model.plk and vectorizer.plk
+├── model.plk          # trained model. File made by train.py
+├── vectorizer.plk     # trained vectorizer. File made by train.py
 ├── tools.py           # Utility functions (math, date, calendar, random, search, weather)
 ├── training.json      # Intent definitions (patterns & responses)
 └── README.md          # Project documentation
@@ -40,7 +42,12 @@ py_chatbot/
 3. **Intent Classification**
    - A machine learning model (`LinearSVC`) is trained to classify input text into intents
 
-4. **Response Handling**
+4. **Training**
+ - Uses joblib to train the `LinearSVC` model and `TF-IDF` vectorizer
+ - creates a model.plk and vectorizer.plk
+ - You only have to run train.py once  
+
+5. **Response Handling**
    - Some intents trigger **tool functions** (math, date, calendar, random)
    - Other intents return predefined responses
 
@@ -57,6 +64,7 @@ py_chatbot/
 - 🗓 Calendar display (current year or specific year)
 - 😂 Jokes & casual conversation
 - 🛑 Graceful exit with terminal clear
+- 🕒 Only have to train once making it faster
 
 ---
 
@@ -91,11 +99,18 @@ You can easily add more by editing `training.json`.
 - Required libraries:
 
 ```bash
-pip install scikit-learn
+pip install scikit-learn joblib
 ```
-and also for the GUI:
+and if you want the GUI:
+
 ```bash
 pip install customtkinter
+```
+
+with everyting included:
+
+```bash
+pip install scikit-learn joblib customtkinter
 ```
 
 (Standard libraries like `json`, `datetime`, `random`, etc. are included with Python.)
@@ -107,7 +122,13 @@ pip install customtkinter
 From the project directory:
 
 ```bash
-python ml.py
+python train.py
+```
+to train the model
+
+```bash
+python ml_GUI.py # GUI version
+python ml_TUI.py # TUI version
 ```
 
 You’ll see:
@@ -130,6 +151,7 @@ You: divide 20 by 4
 You: multiply 6 times 7
 You: what is 20x5
 You: what is 4/2
+You: solve: 3x+2=10
 ```
 
 ---
@@ -173,8 +195,6 @@ Restart the chatbot to retrain the model.
 For best results:
 - Add **20–30 patterns per intent**
 - Avoid overlapping phrases between intents
-- Use `stratify=tags` in `train_test_split`
-- Consider switching to `LogisticRegression` for better confidence handling
 
 ---
 

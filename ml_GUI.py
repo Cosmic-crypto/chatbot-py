@@ -124,7 +124,7 @@ def AI_response(user_input: str) -> str:
         numbers = findall(r"\d+", user_input)
         if len(numbers) < 2:
             return "Please provide two numbers for the range."
-        return f"... {generate_rand(numbers[0], numbers[1])}"
+        return f"... {generate_rand(int(numbers[0]), int(numbers[1]))}"
     
     elif tag == "weather":
         return weather()
@@ -231,3 +231,4 @@ enter_button.pack(pady=10)
 clear_button = ctk.CTkButton(APP, text="Clear", command=clear).pack(pady=10)
 
 APP.mainloop()
+

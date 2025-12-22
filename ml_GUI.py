@@ -36,8 +36,8 @@ for intent in intents:
         patterns.append(pattern)
         tags.append(intent['tag'])
 
-vectorizer = load('vectorizer.pkl')
-model = load('model.pkl')
+vectorizer = load('py_chatbot\\vectorizer.pkl')
+model = load('py_chatbot\\model.pkl')
 
 def AI_response(user_input: str) -> str:
     if not user_input:
@@ -54,8 +54,25 @@ def AI_response(user_input: str) -> str:
     confidence = max(proba)
     tag = model.classes_[proba.argmax()]
 
-    if confidence < 0.5:
-        return "I am not sure I understand that"
+    CONFIDENCE_THRESHOLDS = {
+        "greeting": 0.17,
+        "goodbye": 0.25,
+        "thanks": 0.30,
+        "help": 0.30,
+        "joke": 0.30,
+
+        # risky intents
+        "math": 0.55,
+        "equation": 0.60,
+        "weather": 0.50,
+        "news": 0.50
+    }
+
+
+    threshold = CONFIDENCE_THRESHOLDS.get(tag, 0.45)
+
+    if confidence < threshold:
+        return "I'm not sure I understood that. Could you rephrase?"
 
     if tag == "math":
         numbers = findall(r"\d+", user_input)

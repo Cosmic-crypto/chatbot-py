@@ -97,7 +97,7 @@ def AI_response(user_input: str) -> str:
         
     elif tag == "random":
         numbers = findall(r"\d+", user_input)
-        return f"Here is a random number from {numbers[0]} to {numbers[1]}: {generate_rand(numbers[0], numbers[1])}"
+        return f"Here is a random number from {int(numbers[0])} to {int(numbers[1])}: {generate_rand(int(numbers[0]), int(numbers[1]))}"
     
     elif tag == "weather":
         return weather()

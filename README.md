@@ -5,9 +5,10 @@ A simple **intent-based chatbot** built with **Python**, **scikit-learn**, and *
 ---
 ## Release notes (v3.2)
 - train.py meaning only train once and no more training
+- new model (`LogisticRegression` instead of `LinearSVC`)
 - better accuracy, the model now will not answer unless it is atleast 50% clear on what you are asking
 - equation solver fix (v3.1 bug fix)
-- accuracy upgrade (v3.2 update)
+- training data upgrade (v3.2 update)
 
 ---
 

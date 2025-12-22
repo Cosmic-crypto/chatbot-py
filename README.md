@@ -1,6 +1,13 @@
-# PyBot Chatbot 🤖
+# PyBot Chatbot (v2) 🤖
 
 A simple **intent-based chatbot** built with **Python**, **scikit-learn**, and **TF-IDF**. PyBot uses classic machine learning (not deep learning) to classify user input into intents and respond accordingly. It also supports basic tools like math operations, random number generation, date/time, and calendar display.
+
+---
+## Release notes (v2)
+- Weather api connection (currently only weather data for London)
+- News (Shown by webscraping)
+- Repeating feature
+- equation solver & simplifier (solver doesn't work yet coming v2.1)
 
 ---
 

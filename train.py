@@ -34,7 +34,7 @@ model = LogisticRegression(max_iter=2000)
 model.fit(X_train, y_train)
 
 # Save model + vectorizer
-dump(model, "model.pkl")
-dump(vectorizer, "vectorizer.pkl")
+dump(model, "py_chatbot\\model.pkl")
+dump(vectorizer, "py_chatbot\\vectorizer.pkl")
 
 print("✅ Model trained and saved successfully")

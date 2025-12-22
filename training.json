@@ -163,10 +163,28 @@
       "what is -",
       "what is +"
     ],
-    "responses": [
-      "Let me calculate that.",
-      "Math mode activated."
-    ]
+    "responses": []
+  },
+
+  {
+    "tag": "equation",
+    "patterns": [
+      "solve this: ",
+      "can you do this: ",
+      "do this linear algebra: ",
+      "solve for : "
+    ],
+    "responses": []
+  },
+
+  {
+    "tag": "simplify",
+    "patterns": [
+      "simplify this for me: ",
+      "can you simplify this: ",
+      "simplify this: "
+    ],
+    "responses": []
   },
 
   {
@@ -193,6 +211,40 @@
       "Why did the scarecrow win an award? Because he was outstanding in his field!",
       "Why don't skeletons fight each other? They don't have the guts!"
     ]
+  },
+
+  {
+    "tag": "repeat",
+    "patterns": [
+      "can you repeat after me ", "say this ", "can you repeat this "
+    ],
+    "responses": []
+  },
+
+  {
+    "tag": "weather",
+    "patterns": [
+      "what's the weather outside",
+      "what's the weather like",
+      "what's the temprature",
+      "show me the weather",
+      "show me the temprature",
+      "weather",
+      "temprature"
+    ],
+    "responses": []
+  },
+
+  {
+    "tag": "news",
+    "patterns": [
+      "what's the latest headlines",
+      "what's the news",
+      "tell me the news",
+      "what's going on today",
+      "check the news"
+    ],
+    "responses": []
   },
 
   {

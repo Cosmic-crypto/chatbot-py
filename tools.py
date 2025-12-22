@@ -11,19 +11,28 @@ def fetch_date() -> str:
     return str(datetime.datetime.now())
 
 def maths(x: float, y: float, operation: str) -> float:
+    SAFE_FUNCS = {
+        "sin": math.sin,
+        "cos": math.cos,
+        "tan": math.tan,
+        "sqrt": math.sqrt
+    }
+
     if operation == "add":
         return x + y
-    elif operation == "subtract":
+    if operation == "subtract":
         return x - y
-    elif operation == "multiply":
+    if operation == "multiply":
         return x * y
-    elif operation == "divide":
+    if operation == "divide":
+        if y == 0:
+            raise ZeroDivisionError("Cannot divide by zero")
         return x / y
-    # For math functions like sin, cos, sqrt
-    elif operation.startswith("math."):
-        return eval(f"{operation}({x})")  # only apply to x
-    else:
-        raise ValueError("Unsupported operation")
+
+    if operation in SAFE_FUNCS:
+        return SAFE_FUNCS[operation](x)
+
+    raise ValueError("Unsupported operation")
     
 # auto insert * – example: 3x => 3*x
 def add_mulsign(expression: str) -> str:
@@ -62,7 +71,7 @@ def simplify(expression: str) -> str:
 def repeat(chars: str) -> str:
     return chars
 
-def generate_rand(end: int, start: int = 0) -> int:
+def generate_rand(start: int, end: int) -> int:
     return random.randint(start, end)
 
 def show_calender(year: int | None = None) -> str:

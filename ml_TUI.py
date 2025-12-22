@@ -4,16 +4,14 @@ from string import (
     digits,
     punctuation
 )
-from json import load
-from sklearn.svm import LinearSVC
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
+from json import load as jload
+from joblib import load
 from random import choice
 from tools import *
 
 # Load data from JSON into intents
 with open('py_chatbot\\training.json', 'r', encoding='utf-8') as f:
-    intents = load(f)
+    intents = jload(f)
 
 # Normalize patterns to lowercase for consistency
 for intent in intents:
@@ -29,19 +27,17 @@ for intent in intents:
         tags.append(intent['tag'])
 
 # Convert text → numbers
-vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform(patterns)
-
-# train our model
-X_train, X_test, y_train, y_test = train_test_split(X, tags, stratify=tags, test_size=0.2, random_state=42)
-
-# Define our model
-model = LinearSVC()
-model.fit(X_train, y_train)
+vectorizer = load('model.pkl')
+model = load('model.pkl')
 
 def AI_response(user_input: str) -> str:
     input_vec = vectorizer.transform([user_input])
-    tag = model.predict(input_vec)[0]
+    proba = model.predict_proba(input_vec)[0]
+    confidence = max(proba)
+    tag = model.classes_[proba.argmax()]
+
+    if confidence < 0.5:
+        return "I am not sure I understand that"
     
     # Handle math intent
     if tag == "math":

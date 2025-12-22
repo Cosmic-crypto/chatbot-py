@@ -108,18 +108,21 @@ def AI_response(user_input: str) -> str:
         return weather()
     
     elif tag == "equation":
-        words = user_input.split()
-        ignored_words = "what", "solve", "equation", "can", "you", "do", "this", "for", "me", ":"
+        try:
+            # Extract equation using regex
+            match = search(r"([a-zA-Z0-9+\-*/^=() ]+)", user_input)
+            if not match:
+                return "I couldn't find an equation to solve."
 
-        # Filter out the common words to leave just the city
-        eq = [w for w in words if w.lower() not in ignored_words]
-        vars = findall(r"\D", str(eq))
-        
-        eq = [t for t in eq if t.isalnum() or any(op in t for op in "+-*/^=")]
+            equation = match.group(1).replace(" ", "")
+            
+            # Detect variables (letters only)
+            variables = sorted(set(findall(r"[a-zA-Z]", equation)))
 
-        eq = "".join(str(e) for e in eq)
+            return solve_equation(equation, *variables)
 
-        return solve_equation(eq, *vars)
+        except Exception as err:
+            return f"Could not solve the equation: {err}"
     
     elif tag == "simplify":
         words = user_input.split()

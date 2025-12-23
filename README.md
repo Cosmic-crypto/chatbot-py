@@ -30,6 +30,7 @@ py_chatbot/
 │
 ├── ml_TUI.py          # Main chatbot + ML model (Terminal)
 ├── ml_GUI.py          # Main chatbot + ML model (User-interface)
+├── ml_GUIst.py        # Main chatbot + ML model (Web version)
 ├── train.py           # trains the chatbots and creates model.plk and vectorizer.plk
 ├── model.plk          # trained model. File made by train.py
 ├── vectorizer.plk     # trained vectorizer. File made by train.py
@@ -53,10 +54,10 @@ py_chatbot/
    - User patterns are converted into numerical features using **TF-IDF**
 
 3. **Intent Classification**
-   - A machine learning model (`LinearSVC`) is trained to classify input text into intents
+   - A machine learning model (`LogisitcRegression`) is trained to classify input text into intents
 
 4. **Training**
- - Uses joblib to train the `LinearSVC` model and `TF-IDF` vectorizer
+ - Uses joblib to train the `LogisticRegression` model and `TF-IDF` vectorizer
  - creates a model.plk and vectorizer.plk
  - You only have to run train.py once  
 
@@ -112,18 +113,22 @@ You can easily add more by editing `training.json`.
 - Required libraries:
 
 ```bash
-pip install scikit-learn joblib
+pip install scikit-learn joblib sympy requests bs4
 ```
-and if you want the GUI:
+if you want the GUI:
 
 ```bash
 pip install customtkinter
+```
+if you want web local host:
+```bash
+pip install streamlit
 ```
 
 with everyting included:
 
 ```bash
-pip install scikit-learn joblib customtkinter
+pip install scikit-learn joblib sympy requests bs4 customtkinter streamlit
 ```
 
 (Standard libraries like `json`, `datetime`, `random`, etc. are included with Python.)
@@ -142,6 +147,7 @@ to train the model
 ```bash
 python ml_GUI.py # GUI version
 python ml_TUI.py # TUI version
+python -m streamlit run ml_GUIst.py
 ```
 
 You’ll see:
@@ -220,7 +226,6 @@ For best results:
 
 ## Improvement ideas:
 
-- Currently the equation solver does not really work, so fix the equation solver
 - Add a choice to chose where you are and get the weather
 - Add better training data!
 

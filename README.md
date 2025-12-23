@@ -1,18 +1,24 @@
-# PyBot Chatbot (v3.3) 🤖
+# PyBot Chatbot (v4) 🤖
 
 A simple **intent-based chatbot** built with **Python**, **scikit-learn**, and **TF-IDF**. PyBot uses classic machine learning (not deep learning) to classify user input into intents and respond accordingly. It also supports basic tools like math operations, random number generation, date/time, and calendar display.
 
 ---
-## Release notes (v3.3)
-- train.py meaning only train once and no more training
-- new model (`LogisticRegression` instead of `LinearSVC`)
-- better accuracy, the model now will not answer unless it is atleast 50% clear on what you are asking
+## Releases
+- TUI & GUI built (v1 feature)
+- Add tools (v2 feature)
+- Add more tools like weather and news (v2.1 update)
+- train.py meaning only train once and no more training (v3 feature)
+- new model (`LogisticRegression` instead of `LinearSVC`) (v3 upgrade)
+- better accuracy, the model now will not answer unless it is atleast 50% clear on what you are asking (v3 update)
 - equation solver fix (v3.1 bug fix)
-- training data upgrade (v3.2 update)
+- training data upgrade (v3.2 upgrade)
 - A new layer of verification (v3.3 update)
 - maths func in `tools.py` made safer and cleaner (v3.3 update)
 - standard characters verification in `ml_TUI.py` (v3.3 bug fix)
 - better code readability and code now more compatible with Linux/Mac (v3.3 bug fix)
+- AI more usable and smarter (v4 bug fix)
+- more data in the JSON file (v4 upgrade)
+- Streamlit version (v4 feature)
 
 ---
 
@@ -199,7 +205,7 @@ Restart the chatbot to retrain the model.
 ## 📈 Improving Accuracy
 
 For best results:
-- Add **20–30 patterns per intent**
+- Add **40–50 patterns per intent**
 - Avoid overlapping phrases between intents
 
 ---

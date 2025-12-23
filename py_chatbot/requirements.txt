@@ -1,5 +1,0 @@
-streamlit
-joblib
-bs4
-requests
-sympy

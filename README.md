@@ -19,6 +19,7 @@ A simple **intent-based chatbot** built with **Python**, **scikit-learn**, and *
 - AI more usable and smarter (v4 bug fix)
 - more data in the JSON file (v4 upgrade)
 - Streamlit version (v4 feature)
+- Streamlit deployment (v4.1 update) COMING SOON!
 
 ---
 

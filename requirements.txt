@@ -1,1 +1,6 @@
-requirements.txt
+streamlit
+joblib
+scikit-learn
+sympy
+requests
+bs4

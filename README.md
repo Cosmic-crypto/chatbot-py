@@ -4,7 +4,8 @@ A simple **intent-based chatbot** built with **Python**, **scikit-learn**, and *
 
 ---
 ## Releases
-- TUI & GUI built (v1 feature)
+- TUI built (v alpha 0.5 feature)
+- GUI built (v1 feature)
 - Add tools (v2 feature)
 - Add more tools like weather and news (v2.1 update)
 - train.py meaning only train once and no more training (v3 feature)

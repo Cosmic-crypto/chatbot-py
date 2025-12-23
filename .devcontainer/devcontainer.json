@@ -6,7 +6,8 @@
     "codespaces": {
       "openFiles": [
         "README.md",
-        "ml_GUIst.py"
+        "ml_GUIst.py",
+        "requirments.txt"
       ]
     },
     "vscode": {

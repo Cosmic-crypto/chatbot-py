@@ -6,7 +6,6 @@
       "openFiles": [
         "README.md",
         "ml_GUIst.py",
-        "train.py",
         "tools.py",
         "requirements.txt"
       ]

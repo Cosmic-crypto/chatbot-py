@@ -1,4 +1,4 @@
-# PyBot Chatbot (v4) 🤖
+# PyBot Chatbot (v4.1) 🤖
 
 A simple **intent-based chatbot** built with **Python**, **scikit-learn**, and **TF-IDF**. PyBot uses classic machine learning (not deep learning) to classify user input into intents and respond accordingly. It also supports basic tools like math operations, random number generation, date/time, and calendar display.
 
@@ -20,7 +20,8 @@ A simple **intent-based chatbot** built with **Python**, **scikit-learn**, and *
 - AI more usable and smarter (v4 bug fix)
 - more data in the JSON file (v4 upgrade)
 - Streamlit version (v4 feature)
-- Streamlit deployment (v4.1 update) COMING SOON!
+- requirements.txt added (v4.1 feature) (custom tkinter not included)
+- Streamlit deployment (v4.1 update) [AI chatbot link](https://chatbot-py-v4-1.streamlit.app/)
 
 ---
 
@@ -35,6 +36,7 @@ py_chatbot/
 ├── train.py           # trains the chatbots and creates model.plk and vectorizer.plk
 ├── model.plk          # trained model. File made by train.py
 ├── vectorizer.plk     # trained vectorizer. File made by train.py
+├── requirments.txt    # the requirments for this project
 ├── tools.py           # Utility functions (math, date, calendar, random, search, weather)
 ├── training.json      # Intent definitions (patterns & responses)
 └── README.md          # Project documentation
@@ -131,6 +133,11 @@ with everyting included:
 ```bash
 pip install scikit-learn joblib sympy requests bs4 customtkinter streamlit
 ```
+or
+```bash
+pip install -r requirment.txt
+pip install customtkinter
+```
 
 (Standard libraries like `json`, `datetime`, `random`, etc. are included with Python.)
 
@@ -148,7 +155,7 @@ to train the model
 ```bash
 python ml_GUI.py # GUI version
 python ml_TUI.py # TUI version
-python -m streamlit run ml_GUIst.py
+python -m streamlit run ml_GUIst.py # streamlit web version
 ```
 
 You’ll see:
@@ -160,6 +167,8 @@ Type a message and chat with PyBot.
 To exit:
 - Type `bye`, `quit`, `exit`, etc.
 - Or press **Ctrl + C**
+
+or just go to [this link](https://chatbot-py-v4-1.streamlit.app/)
 
 ---
 
